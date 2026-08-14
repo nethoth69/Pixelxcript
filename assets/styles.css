@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+header {
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #00416a, #e4e5e6);
+  color: white;
+}
+.nav-links.active {
+  display: block;
+}
