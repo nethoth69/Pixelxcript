@@ -9,12 +9,39 @@
 <body>
   <header><a href="index.html">Back to Home</a></header>
   <h1>Contact Us</h1>
+
+  <!-- Carousel -->
+  <section class="carousel">
+    <div class="carousel-container">
+      <div class="slide active">
+        <img src="assets/door.jpg" alt="Door Installation">
+        <p>Secure Door Installation</p>
+      </div>
+      <div class="slide">
+        <img src="assets/cctv.jpg" alt="CCTV Installation">
+        <p>Reliable CCTV Solutions</p>
+      </div>
+      <div class="slide">
+        <img src="assets/drawing.jpg" alt="Architectural Drawing">
+        <p>Professional Architectural Drawings</p>
+      </div>
+      <div class="slide">
+        <img src="assets/hardware.jpg" alt="Hardware Installation">
+        <p>Modern Hardware Installations</p>
+      </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </section>
+
+  <!-- Contact form -->
   <form name="contactForm" onsubmit="return validateForm()">
     <label>Name:</label><input type="text" name="name"><br>
     <label>Email:</label><input type="email" name="email"><br>
     <label>Message:</label><textarea name="message"></textarea><br>
     <button type="submit">Send</button>
   </form>
+
   <script src="assets/script.js"></script>
 </body>
 </html>
