@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixelxcript Systems</title>
   <link rel="stylesheet" href="assets/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
 </head>
 <body>
   <header>
@@ -19,6 +21,29 @@
       <div class="hamburger">&#9776;</div>
     </nav>
   </header>
+  <section class="relative max-w-4xl mx-auto mt-10 rounded-lg shadow-lg overflow-hidden">
+  <div class="carousel-container">
+    <div class="slide active text-center">
+      <img src="assets/door.jpg" alt="Door Installation" class="w-full h-auto">
+      <p class="bg-gray-900 text-white py-2">Secure Door Installation</p>
+    </div>
+    <div class="slide text-center">
+      <img src="assets/cctv.jpg" alt="CCTV Installation" class="w-full h-auto">
+      <p class="bg-gray-900 text-white py-2">Reliable CCTV Solutions</p>
+    </div>
+    <div class="slide text-center">
+      <img src="assets/drawing.jpg" alt="Architectural Drawing" class="w-full h-auto">
+      <p class="bg-gray-900 text-white py-2">Professional Architectural Drawings</p>
+    </div>
+    <div class="slide text-center">
+      <img src="assets/hardware.jpg" alt="Hardware Installation" class="w-full h-auto">
+      <p class="bg-gray-900 text-white py-2">Modern Hardware Installations</p>
+    </div>
+  </div>
+  <button class="prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded">&#10094;</button>
+  <button class="next absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded">&#10095;</button>
+</section>
+
   <section class="hero">
     <h1>Professional Door & CCTV Installation</h1>
     <p>Secure, modern, and reliable solutions for your home.</p>
