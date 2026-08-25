@@ -9,18 +9,27 @@
 
 </head>
 <body>
-  <header>
-    <nav id="navbar">
-      <div class="logo">Pixelxcript Systems</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="hamburger">&#9776;</div>
-    </nav>
-  </header>
+  <header class="bg-gray-900 text-white">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Logo -->
+    <div class="flex items-center space-x-3">
+      <img src="assets/pixelscript_logo.svg" alt="Pixelxcript Logo" class="h-10 w-10">
+      <span class="text-xl font-bold">Pixelxcript Systems</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="hidden md:flex space-x-6 font-semibold">
+      <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+      <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
+      <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
+      <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+    </ul>
+
+    <!-- Hamburger for Mobile -->
+    <div class="md:hidden text-2xl cursor-pointer">&#9776;</div>
+  </nav>
+</header>
+
   <section class="relative max-w-4xl mx-auto mt-10 rounded-lg shadow-lg overflow-hidden">
   <div class="carousel-container">
     <div class="slide active text-center">
