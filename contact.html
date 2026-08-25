@@ -4,22 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Pixelxcript Systems</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-</head>
-<body>
-  <header class="bg-gray-900 text-white py-4 flex items-center justify-center">
   <link rel="icon" type="image/svg+xml" href="assets/pixelxcript_logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
 
-  <h1 class="text-2xl font-bold">Pixelxcript Systems</h1>
-</header>
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-4 flex items-center justify-center">
+    <div class="flex items-center space-x-3">
+      <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-10 w-10">
+      <h1 class="text-2xl font-bold">Pixelxcript Systems</h1>
+    </div>
+  </header>
 
+  <!-- Contact Title -->
   <h1 class="fade-in text-3xl font-bold text-center mt-10">Contact Us</h1>
 
-
   <!-- Carousel -->
-  <section class="carousel">
+  <section class="carousel mt-10">
     <div class="carousel-container">
       <div class="slide active">
         <img src="assets/door.jpg" alt="Door Installation">
@@ -42,21 +45,33 @@
     <button class="next">&#10095;</button>
   </section>
 
-  <!-- Contact form -->
-  <form name="contactForm" onsubmit="return validateForm()">
-    <label>Name:</label><input type="text" name="name"><br>
-    <label>Email:</label><input type="email" name="email"><br>
-    <label>Message:</label><textarea name="message"></textarea><br>
-    <button type="submit">Send</button>
-  </form>
+  <!-- Contact Form -->
+  <main class="max-w-lg mx-auto mt-12 px-6">
+    <form name="contactForm" onsubmit="return validateForm()" class="bg-white shadow-lg rounded-lg p-6 space-y-4">
+      <div>
+        <label class="block text-gray-700 font-semibold">Name:</label>
+        <input type="text" name="name" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      <div>
+        <label class="block text-gray-700 font-semibold">Email:</label>
+        <input type="email" name="email" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      <div>
+        <label class="block text-gray-700 font-semibold">Message:</label>
+        <textarea name="message" rows="4" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 transition">Send</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-16">
+    <div class="flex items-center justify-center space-x-3">
+      <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-8 w-8">
+      <p>&copy; 2026 Pixelxcript Systems. All rights reserved.</p>
+    </div>
+  </footer>
 
   <script src="assets/script.js"></script>
-  <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-  <div class="flex items-center justify-center space-x-3">
-    <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-8 w-8">
-    <p>&copy; 2026 Pixelxcript Systems. All rights reserved.</p>
-  </div>
-</footer>
-
 </body>
 </html>

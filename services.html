@@ -4,32 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services - Pixelxcript Systems</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-</head>
-<body>
-  <header class="bg-gray-900 text-white py-4 flex items-center justify-center">
   <link rel="icon" type="image/svg+xml" href="assets/pixelxcript_logo.svg">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-gray-100 text-gray-900">
 
-  <h1 class="text-2xl font-bold">Pixelxcript Systems</h1>
-</header>
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-4 flex items-center justify-center">
+    <div class="flex items-center space-x-3">
+      <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-10 w-10">
+      <h1 class="text-2xl font-bold">Pixelxcript Systems</h1>
+    </div>
+  </header>
 
-  <h1>Our Services</h1>
-  <ul>
-    <li>Installation of Internal & External Doors</li>
-    <li>CCTV Camera Installation</li>
-    <li>Architectural Drawing</li>
-    <li>Hardware Installation for Home Settings</li>
-  </ul>
-  <script src="assets/script.js"></script>
+  <!-- Services Content -->
+  <main class="max-w-6xl mx-auto mt-10 px-6 fade-in">
+    <h1 class="text-3xl font-bold text-center mb-10">Our Services</h1>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition">
+        <img src="assets/door.jpg" alt="Door Installation" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg mb-2">Door Installation</h3>
+        <p class="text-gray-600">Secure and professional door setups for homes and businesses.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition">
+        <img src="assets/cctv.jpg" alt="CCTV Installation" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg mb-2">CCTV Solutions</h3>
+        <p class="text-gray-600">Reliable surveillance systems tailored to your needs.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition">
+        <img src="assets/drawing.jpg" alt="Architectural Drawing" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg mb-2">Architectural Drawings</h3>
+        <p class="text-gray-600">Detailed and professional drawings for construction projects.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition">
+        <img src="assets/hardware.jpg" alt="Hardware Installation" class="w-full h-40 object-cover rounded mb-4">
+        <h3 class="font-bold text-lg mb-2">Hardware Installations</h3>
+        <p class="text-gray-600">Modern hardware setups for efficient operations.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
   <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-  <div class="flex items-center justify-center space-x-3">
-    <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-8 w-8">
-    <p>&copy; 2026 Pixelxcript Systems. All rights reserved.</p>
-  </div>
-</footer>
+    <div class="flex items-center justify-center space-x-3">
+      <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-8 w-8">
+      <p>&copy; 2026 Pixelxcript Systems. All rights reserved.</p>
+    </div>
+  </footer>
 
+  <script src="assets/script.js"></script>
 </body>
-
 </html>
