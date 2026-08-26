@@ -4,67 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixelxcript Systems</title>
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/pixelxcript_logo.svg">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
+  <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
-<header class="bg-gray-900 text-white">
-  <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-    <!-- Logo -->
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-4 flex items-center justify-center">
     <div class="flex items-center space-x-3">
       <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-10 w-10">
-      <span class="text-xl font-bold">Pixelxcript Systems</span>
+      <h1 class="text-2xl font-bold">Pixelxcript Systems</h1>
+    </div>
+  </header>
+
+  <!-- Hero Carousel -->
+  <section class="relative w-full max-w-5xl mx-auto mt-10 overflow-hidden rounded-lg shadow-lg">
+    <div class="carousel">
+      <div class="carousel-slide">
+        <img src="assets/door.jpg" alt="Door Installation" class="w-full h-96 object-cover">
+      </div>
+      <div class="carousel-slide hidden">
+        <img src="assets/cctv.jpg" alt="CCTV Installation" class="w-full h-96 object-cover">
+      </div>
+      <div class="carousel-slide hidden">
+        <img src="assets/drawing.jpg" alt="Architectural Drawing" class="w-full h-96 object-cover">
+      </div>
     </div>
 
-    <!-- Navigation Links -->
-    <ul class="hidden md:flex space-x-6 font-semibold">
-      <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
-      <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
-      <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
-      <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
-    </ul>
-
-    <!-- Hamburger for Mobile -->
-    <div class="md:hidden text-2xl cursor-pointer">&#9776;</div>
-  </nav>
-</header>
-
-
-  <section class="relative max-w-4xl mx-auto mt-10 rounded-lg shadow-lg overflow-hidden">
-  <div class="carousel-container">
-    <div class="slide active text-center">
-      <img src="assets/door.jpg" alt="Door Installation" class="w-full h-auto">
-      <p class="bg-gray-900 text-white py-2">Secure Door Installation</p>
-    </div>
-    <div class="slide text-center">
-      <img src="assets/cctv.jpg" alt="CCTV Installation" class="w-full h-auto">
-      <p class="bg-gray-900 text-white py-2">Reliable CCTV Solutions</p>
-    </div>
-    <div class="slide text-center">
-      <img src="assets/drawing.jpg" alt="Architectural Drawing" class="w-full h-auto">
-      <p class="bg-gray-900 text-white py-2">Professional Architectural Drawings</p>
-    </div>
-    <div class="slide text-center">
-      <img src="assets/hardware.jpg" alt="Hardware Installation" class="w-full h-auto">
-      <p class="bg-gray-900 text-white py-2">Modern Hardware Installations</p>
-    </div>
-  </div>
-  <button class="prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded">&#10094;</button>
-  <button class="next absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded">&#10095;</button>
-</section>
-
-  <section class="hero">
-    <h1>Professional Door & CCTV Installation</h1>
-    <p>Secure, modern, and reliable solutions for your home.</p>
+    <!-- Controls -->
+    <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded prev">&#10094;</button>
+    <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded next">&#10095;</button>
   </section>
-  <script src="assets/script.js"></script>
-  <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-  <div class="flex items-center justify-center space-x-3">
-    <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-8 w-8">
-    <p>&copy; 2026 Pixelxcript Systems. All rights reserved.</p>
-  </div>
-</footer>
 
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6 mt-16">
+    <div class="flex items-center justify-center space-x-3">
+      <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-8 w-8">
+      <p>&copy; 2026 Pixelxcript Systems. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple JS Carousel
+    const slides = document.querySelectorAll('.carousel-slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('hidden', i !== index);
+      });
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    // Auto-play every 5 seconds
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 5000);
+
+    // Initialize
+    showSlide(current);
+  </script>
 </body>
 </html>
