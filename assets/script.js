@@ -6,6 +6,7 @@ if (hamburger) {
     navLinks.classList.toggle("active");
   });
 }
+
 // Smooth Scroll
 document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
   anchor.addEventListener("click", function(e) {
@@ -14,7 +15,8 @@ document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
       behavior: "smooth"
     });
   });
-}
+}); // <-- fixed: added missing closing parenthesis for .forEach(...)
+
 // Form Validation
 function validateForm() {
   const name = document.forms["contactForm"]["name"].value;
@@ -23,6 +25,7 @@ function validateForm() {
     alert("Name and Email must be filled out");
     return false;
   }
+  return true; // added: without this, valid submissions were never explicitly allowed through
 }
 
 // Carousel
@@ -50,15 +53,16 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
+if (prevBtn && nextBtn) { // guard added: index.html's carousel uses different classes/buttons, so these can be null there
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+}
 
 // Auto-play every 5 seconds
-setInterval(nextSlide, 5000);
-
-// Initialize
-showSlide(currentSlide);
-
+if (slides.length) {
+  setInterval(nextSlide, 5000);
+  showSlide(currentSlide);
+}
 
 // Scroll animations
 const faders = document.querySelectorAll('.fade-in');

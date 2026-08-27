@@ -1,4 +1,4 @@
-body {
+* , body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f9f9f9;
@@ -79,7 +79,6 @@ nav {
 
 .prev { left: 10px; }
 .next { right: 10px; }
-
 
 .fade-in {
   opacity: 0;
