@@ -11,43 +11,34 @@
 <body class="bg-gray-100 text-gray-900">
 
   <!-- Header -->
-  <!-- Header -->
-<header class="bg-gray-900 text-white">
-  <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-    <!-- Logo + Name -->
-    <div class="flex items-center space-x-3">
-      <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-10 w-10">
-      <span class="text-xl font-bold">Pixelxcript Systems</span>
-    </div>
+  <header class="bg-gray-900 text-white">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+      <!-- Logo + Name -->
+      <div class="flex items-center space-x-3">
+        <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-10 w-10">
+        <span class="text-xl font-bold">Pixelxcript Systems</span>
+      </div>
 
-    <!-- Navigation Links -->
-    <ul class="hidden md:flex space-x-6 font-semibold">
+      <!-- Navigation Links (Desktop) -->
+      <ul class="hidden md:flex space-x-6 font-semibold">
+        <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+        <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
+        <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
+        <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+      </ul>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden text-2xl cursor-pointer" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <ul id="mobileMenu" class="hidden flex-col bg-gray-800 text-white space-y-4 px-6 py-4 md:hidden">
       <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
       <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
       <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
       <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
     </ul>
-
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden text-2xl cursor-pointer" onclick="toggleMenu()">&#9776;</div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <ul id="mobileMenu" class="hidden flex-col bg-gray-800 text-white space-y-4 px-6 py-4 md:hidden">
-    <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
-    <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
-    <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
-    <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
-  </ul>
-</header>
-
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('hidden');
-  }
-</script>
-
+  </header>
 
   <!-- About Content -->
   <main class="max-w-3xl mx-auto mt-12 px-6 fade-in">
@@ -77,6 +68,13 @@
     </div>
   </footer>
 
+  <!-- Scripts at the end -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+  </script>
   <script src="assets/script.js"></script>
 </body>
 </html>
