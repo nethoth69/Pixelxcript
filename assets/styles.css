@@ -431,6 +431,39 @@ textarea:focus-visible {
 .carousel .prev { left: 14px; }
 .carousel .next { right: 14px; }
 
+/* ---------- Direct contact list ---------- */
+.contact-direct {
+  list-style: none;
+  margin: var(--gap-md) 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.contact-direct li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.contact-direct-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--amber-deep);
+  min-width: 5.5rem;
+}
+.contact-direct a {
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.contact-direct a:hover {
+  color: var(--amber-deep);
+  border-color: var(--amber-deep);
+}
+
 /* ---------- Contact form ---------- */
 .contact-layout {
   display: grid;
