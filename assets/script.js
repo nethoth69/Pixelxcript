@@ -1,34 +1,40 @@
-// Responsive Navbar
+// ---------- Responsive nav ----------
 const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-if (hamburger) {
+const mobileMenu = document.getElementById("mobileMenu");
+if (hamburger && mobileMenu) {
   hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
+    mobileMenu.classList.toggle("active");
   });
 }
 
-// Smooth Scroll
-document.querySelectorAll("a[href^=\"#\"]").forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth"
-    });
+// ---------- Smooth scroll for in-page anchors ----------
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    const targetId = this.getAttribute("href");
+    if (targetId.length > 1) {
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    }
   });
-}); // <-- fixed: added missing closing parenthesis for .forEach(...)
+});
 
-// Form Validation
+// ---------- Contact form validation ----------
 function validateForm() {
-  const name = document.forms["contactForm"]["name"].value;
-  const email = document.forms["contactForm"]["email"].value;
+  const form = document.forms["contactForm"];
+  if (!form) return true;
+  const name = form["name"].value.trim();
+  const email = form["email"].value.trim();
   if (name === "" || email === "") {
-    alert("Name and Email must be filled out");
+    alert("Please fill in your name and email.");
     return false;
   }
-  return true; // added: without this, valid submissions were never explicitly allowed through
+  return true;
 }
 
-// Carousel
+// ---------- Carousel (used on index.html and contact.html) ----------
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const prevBtn = document.querySelector(".prev");
@@ -36,10 +42,7 @@ const nextBtn = document.querySelector(".next");
 
 function showSlide(index) {
   slides.forEach((slide, i) => {
-    slide.classList.remove("active");
-    if (i === index) {
-      slide.classList.add("active");
-    }
+    slide.classList.toggle("active", i === index);
   });
 }
 
@@ -53,33 +56,29 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-if (prevBtn && nextBtn) { // guard added: index.html's carousel uses different classes/buttons, so these can be null there
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
-}
-
-// Auto-play every 5 seconds
 if (slides.length) {
-  setInterval(nextSlide, 5000);
+  if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+  if (prevBtn) prevBtn.addEventListener("click", prevSlide);
   showSlide(currentSlide);
+  setInterval(nextSlide, 5000);
 }
 
-// Scroll animations
-const faders = document.querySelectorAll('.fade-in');
+// ---------- Scroll-triggered fade-ins ----------
+const faders = document.querySelectorAll(".fade-in");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
+if (prefersReducedMotion) {
+  faders.forEach(fader => fader.classList.add("visible"));
+} else {
+  const appearOnScroll = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2, rootMargin: "0px 0px -50px 0px" }
+  );
+  faders.forEach(fader => appearOnScroll.observe(fader));
+}

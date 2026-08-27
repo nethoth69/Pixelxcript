@@ -3,114 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixelxcript Systems</title>
+  <title>Pixelxcript Systems — Installations, CCTV &amp; Architectural Drawings, Ghana</title>
+  <meta name="description" content="Pixelxcript Systems delivers security door installation, CCTV solutions, architectural drawings, and hardware installations for homes and businesses across Ghana.">
   <link rel="icon" type="image/svg+xml" href="assets/pixelxcript_logo.svg">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body>
 
   <!-- Header -->
-  <header class="bg-gray-900 text-white">
-    <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-      <!-- Logo + Name -->
-      <div class="flex items-center space-x-3">
-        <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-10 w-10">
-        <span class="text-xl font-bold">Pixelxcript Systems</span>
-      </div>
-
-      <!-- Navigation Links (Desktop) -->
-      <ul class="hidden md:flex space-x-6 font-semibold">
-        <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
-        <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
-        <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
-        <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="index.html" class="brand">
+        <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Systems logo">
+        <span>Pixelxcript Systems</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page"><span class="idx">01</span>Home</a></li>
+        <li><a href="services.html"><span class="idx">02</span>Services</a></li>
+        <li><a href="about.html"><span class="idx">03</span>About</a></li>
+        <li><a href="contact.html"><span class="idx">04</span>Contact</a></li>
       </ul>
-
-      <!-- Mobile Hamburger -->
-      <div class="md:hidden text-2xl cursor-pointer" onclick="toggleMenu()">&#9776;</div>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">&#9776;</button>
     </nav>
-
-    <!-- Mobile Menu -->
-    <ul id="mobileMenu" class="hidden flex-col bg-gray-800 text-white space-y-4 px-6 py-4 md:hidden">
-      <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
-      <li><a href="services.html" class="hover:text-yellow-400 transition">Services</a></li>
-      <li><a href="about.html" class="hover:text-yellow-400 transition">About</a></li>
-      <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="index.html"><span class="idx">01</span>Home</a></li>
+      <li><a href="services.html"><span class="idx">02</span>Services</a></li>
+      <li><a href="about.html"><span class="idx">03</span>About</a></li>
+      <li><a href="contact.html"><span class="idx">04</span>Contact</a></li>
     </ul>
   </header>
 
-  <!-- Hero Carousel with Overlay -->
-  <section class="relative w-full max-w-5xl mx-auto mt-10 overflow-hidden rounded-lg shadow-lg">
-    <div class="carousel">
-      <div class="carousel-slide relative">
-        <img src="assets/door.jpg" alt="Door Installation" class="w-full h-96 object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <h1 class="text-3xl md:text-5xl font-bold text-white">Welcome to Pixelxcript Systems</h1>
-        </div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Ghana — Installations &amp; Technical Design</span>
+      <h1>Built to spec.<br>Installed to last.</h1>
+      <p class="lead">
+        Pixelxcript Systems plans and installs security doors, CCTV, and
+        hardware, and produces the architectural drawings behind them —
+        one team, start to finish, for homes and businesses across Ghana.
+      </p>
+      <div class="hero-actions">
+        <a href="services.html" class="btn btn-primary">View services</a>
+        <a href="contact.html" class="btn btn-outline">Get a quote</a>
       </div>
-      <div class="carousel-slide hidden relative">
-        <img src="assets/cctv.jpg" alt="CCTV Installation" class="w-full h-96 object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <h1 class="text-3xl md:text-5xl font-bold text-white">Secure CCTV Solutions</h1>
-        </div>
+      <div class="spec-legend">
+        <span class="spec-tag"><b>DOOR-01</b> Security doors</span>
+        <span class="spec-tag"><b>CCTV-02</b> Surveillance</span>
+        <span class="spec-tag"><b>DRAW-03</b> Architectural drawings</span>
+        <span class="spec-tag"><b>HDW-04</b> Hardware installs</span>
       </div>
-      <div class="carousel-slide hidden relative">
-        <img src="assets/drawing.jpg" alt="Architectural Drawing" class="w-full h-96 object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <h1 class="text-3xl md:text-5xl font-bold text-white">Professional Architectural Designs</h1>
+    </div>
+  </section>
+
+  <!-- Work carousel -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head fade-in">
+        <span class="eyebrow">Field of work</span>
+        <h2>A look at the installs</h2>
+        <p>A quick tour of the four disciplines we work in day to day.</p>
+      </div>
+
+      <div class="carousel frame fade-in">
+        <div class="carousel-container">
+          <div class="slide active">
+            <img src="assets/door.jpg" alt="Security door installation">
+            <div class="slide-caption">
+              <span class="tag">DOOR-01</span>
+              <p>Secure door installation</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/cctv.jpg" alt="CCTV camera installation">
+            <div class="slide-caption">
+              <span class="tag">CCTV-02</span>
+              <p>Reliable CCTV solutions</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/drawing.jpg" alt="Architectural drawing on a drafting table">
+            <div class="slide-caption">
+              <span class="tag">DRAW-03</span>
+              <p>Professional architectural drawings</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/hardware.jpg" alt="Hardware installation">
+            <div class="slide-caption">
+              <span class="tag">HDW-04</span>
+              <p>Modern hardware installations</p>
+            </div>
+          </div>
+        </div>
+        <button class="prev" aria-label="Previous slide">&#10094;</button>
+        <button class="next" aria-label="Next slide">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services preview -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head fade-in">
+        <span class="eyebrow">What we do</span>
+        <h2>Four disciplines, one crew</h2>
+      </div>
+      <div class="grid">
+        <div class="card fade-in">
+          <span class="sheet-no">SHEET 01 / 04</span>
+          <h3>Door installation</h3>
+          <p>Secure and professional door setups for homes and businesses.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="sheet-no">SHEET 02 / 04</span>
+          <h3>CCTV solutions</h3>
+          <p>Reliable surveillance systems tailored to your property.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="sheet-no">SHEET 03 / 04</span>
+          <h3>Architectural drawings</h3>
+          <p>Detailed, professional drawings for construction projects.</p>
+        </div>
+        <div class="card fade-in">
+          <span class="sheet-no">SHEET 04 / 04</span>
+          <h3>Hardware installations</h3>
+          <p>Modern hardware setups for efficient operations.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Controls -->
-    <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded prev">&#10094;</button>
-    <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white px-3 py-1 rounded next">&#10095;</button>
+  <!-- CTA banner -->
+  <section class="hero" style="padding: var(--gap-lg) 0;">
+    <div class="hero-inner fade-in">
+      <h2 style="color: var(--white);">Have a project in mind?</h2>
+      <p class="lead">Tell us what you're planning and we'll help you spec it out.</p>
+      <div class="hero-actions" style="margin-bottom: 0;">
+        <a href="contact.html" class="btn btn-primary">Start a conversation</a>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6 mt-16">
-    <div class="flex items-center justify-center space-x-3">
-      <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Logo" class="h-8 w-8">
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <img src="assets/pixelxcript_logo.svg" alt="Pixelxcript Systems logo">
+        <span>Pixelxcript Systems</span>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="container footer-bottom">
       <p>&copy; 2026 Pixelxcript Systems. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Scripts at the end -->
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('mobileMenu');
-      menu.classList.toggle('hidden');
-    }
-
-    // Simple JS Carousel
-    const slides = document.querySelectorAll('.carousel-slide');
-    let current = 0;
-
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('hidden', i !== index);
-      });
-    }
-
-    document.querySelector('.next').addEventListener('click', () => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    });
-
-    document.querySelector('.prev').addEventListener('click', () => {
-      current = (current - 1 + slides.length) % slides.length;
-      showSlide(current);
-    });
-
-    // Auto-play every 5 seconds
-    setInterval(() => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }, 5000);
-
-    // Initialize
-    showSlide(current);
-  </script>
+  <script src="assets/script.js"></script>
 </body>
 </html>
