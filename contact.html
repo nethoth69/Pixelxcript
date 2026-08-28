@@ -126,7 +126,7 @@
         </div>
 
         <div class="form-card frame fade-in">
-          <form name="contactForm" onsubmit="return validateForm()">
+          <form id="contactForm" action="https://formspree.io/f/xrpgggkz" method="POST">
             <div class="field">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" required aria-required="true">
@@ -139,8 +139,9 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="4"></textarea>
             </div>
+            <input type="hidden" name="_subject" value="New message from Pixelxcript website">
             <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Send message</button>
-            <p class="form-note">We'll get back to you as soon as we can.</p>
+            <p class="form-note" id="formStatus" role="status" aria-live="polite">We'll get back to you as soon as we can.</p>
           </form>
         </div>
       </div>

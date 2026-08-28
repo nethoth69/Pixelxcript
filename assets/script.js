@@ -21,17 +21,51 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ---------- Contact form validation ----------
-function validateForm() {
-  const form = document.forms["contactForm"];
-  if (!form) return true;
-  const name = form["name"].value.trim();
-  const email = form["email"].value.trim();
-  if (name === "" || email === "") {
-    alert("Please fill in your name and email.");
-    return false;
-  }
-  return true;
+// ---------- Contact form (Formspree) ----------
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+if (contactForm && formStatus) {
+  const defaultStatusText = formStatus.textContent;
+
+  contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const name = contactForm["name"].value.trim();
+    const email = contactForm["email"].value.trim();
+    if (name === "" || email === "") {
+      formStatus.textContent = "Please fill in your name and email.";
+      formStatus.style.color = "#B3261E";
+      return;
+    }
+
+    const submitBtn = contactForm.querySelector("button[type='submit']");
+    submitBtn.disabled = true;
+    formStatus.textContent = "Sending…";
+    formStatus.style.color = "";
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: { Accept: "application/json" }
+      });
+
+      if (response.ok) {
+        contactForm.reset();
+        formStatus.textContent = "Thanks — your message has been sent. We'll get back to you soon.";
+        formStatus.style.color = "#1E7B34";
+      } else {
+        formStatus.textContent = "Something went wrong sending your message. Please try WhatsApp or email instead.";
+        formStatus.style.color = "#B3261E";
+      }
+    } catch (err) {
+      formStatus.textContent = "Network error — please check your connection or try WhatsApp/email instead.";
+      formStatus.style.color = "#B3261E";
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
 }
 
 // ---------- Carousel (used on index.html and contact.html) ----------
