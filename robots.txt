@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nethoth69.github.io/Pixelxcript/sitemap.xml
