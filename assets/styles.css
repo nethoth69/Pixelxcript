@@ -485,6 +485,7 @@ textarea:focus-visible {
   color: rgba(245,242,234,0.75);
   padding: var(--gap-lg) 0 var(--gap-sm);
 }
+.site-footer p { color: inherit; }
 .footer-top {
   display: flex;
   justify-content: space-between;
